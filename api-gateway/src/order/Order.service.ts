@@ -25,13 +25,29 @@ public hello(): Promise<any> {
         });
     });
 }
-
 // Adjust the return type to Promise<any>
 public createOrder(data: any): Promise<any> {
        
     return new Promise((resolve, reject) => {
            
         this.orderClient.send('createOrder', data).subscribe({
+            next: (data) => {
+                console.log("Data received:", data);
+                resolve(data);   
+            },
+            error: (error) => {
+                console.error("Error:", error);
+                reject(new HttpException(error, HttpStatus.CONFLICT)); // Reject the promise with status code 409
+            }
+        });
+    });
+}
+// Adjust the return type to Promise<any>
+public createOrder2(token:string , data: any): Promise<any> {
+       
+    return new Promise((resolve, reject) => {
+           
+        this.orderClient.send('createOrder2', { token, body: data }).subscribe({
             next: (data) => {
                 console.log("Data received:", data);
                 resolve(data);   

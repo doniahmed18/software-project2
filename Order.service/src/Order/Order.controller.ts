@@ -12,11 +12,15 @@ export class OrderController {
         console.log(req);
         return this.orderService.hello(req.data);
     }
-
     @MessagePattern('createOrder')
     async createOrder(command) {
         console.log(command +"from product controller");
         return this.orderService.createOrder(command);
+    }
+    @MessagePattern('createOrder2')
+    async createOrder2(command) {
+        console.log(command +"from product controller");
+        return this.orderService.createOrder2(command.token, command.body);
     }
 
     @MessagePattern('getOrder')
@@ -32,7 +36,7 @@ export class OrderController {
             return { statusCode: 500, message: "Error fetching products" };
         }
     }
-    
+     
 
 
     @MessagePattern('editOrder')
@@ -68,6 +72,7 @@ export class OrderController {
         const quantity = command.body.products[6];
         return this.orderService.editcustomizeOrder(command.token, id,color,material,height,width,type,quantity);
     }
+
 
     @MessagePattern('deleteOrder')
     async deleteOrder(token: string) {

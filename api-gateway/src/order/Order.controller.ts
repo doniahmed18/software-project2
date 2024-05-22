@@ -15,11 +15,7 @@ export class OrderController implements OnModuleInit {
         return this.orderService.hello();
     }
 
-    @Post('createOrder')
-    async createProduct(@Request() req) {
-        console.log(req.body.ProductName +"from api gateway");
-        return this.orderService.createOrder(req.body);
-    }
+
 
     @Get('getOrder') 
     async getOrder(@Headers('authorization') token: string) {
@@ -45,6 +41,17 @@ export class OrderController implements OnModuleInit {
         console.log(req.body);
         return this.orderService.editcustomizeOrder(token, req.body); // Pass 'id' as a parameter
     }
+    @Post('createOrder')
+    async createProduct(@Request() req) {
+        console.log(req.body.ProductName +"from api gateway");
+        return this.orderService.createOrder(req.body);
+    }
+
+    @Post('createOrder2')
+    async createOrder2(@Headers('authorization') token: string , @Request() req) {
+        console.log(req.body);
+        return this.orderService.createOrder2(token,req.body); // Pass 'id' as a parameter
+    }
     
     // For deleteProduct endpoint
     @Delete('deleteOrder') // Define the route parameter ':id'
@@ -56,6 +63,7 @@ export class OrderController implements OnModuleInit {
     onModuleInit() {
         this.OrderClient.subscribeToResponseOf('hellofromapi');
         this.OrderClient.subscribeToResponseOf('createOrder');
+        this.OrderClient.subscribeToResponseOf('createOrder2');
         this.OrderClient.subscribeToResponseOf('getOrder');
         this.OrderClient.subscribeToResponseOf('editOrder');
         this.OrderClient.subscribeToResponseOf('editrentOrder');

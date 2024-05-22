@@ -192,11 +192,11 @@ console.log("productinfos: ", productinfo);
       </td>
       <td>
         <div className="product-info">
-          <p> <strong> Address:</strong> {data.orderInfo.Address}</p>
+          <p> <strong> Address:</strong> {data.orderInfo.address}</p>
           <p><strong>Date: </strong> {data.orderInfo.Date}</p>
-          <p><strong>Payment:</strong> {data.orderInfo.Payment}</p>
-          <p><strong>Status:</strong> {data.orderInfo.Status}</p>
-          <p><strong>Total Price:</strong> {data.orderInfo.TotalPrice} $</p>
+          <p><strong>Payment:</strong> {data.orderInfo.paymentMethod}</p>
+          <p><strong>Status:</strong> {data.orderInfo.status}</p>
+          <p><strong>Total Price:</strong> {data.orderInfo.total} $</p>
         </div>
       </td>
       <td>

@@ -322,7 +322,54 @@ console.log(productData);
     setSelectedPayment((prev) => (prev === payment ? "" : payment));
   };
 
-
+  const handlecheckouttwo = async () => {
+    try {
+      // Prepare the data to be sent to the backend for creating the order
+      const orderData = {
+        token: token,
+        products: productData.map((product) => ({
+          id: product.id,
+          quantity: product.quantity,
+          type: product.type,
+          // Include additional product details based on the type if needed
+          ...(product.type === 'purchase' && { height: product.height, width: product.width, material: product.material, color: product.color, startdate: product.startdate, enddate: product.enddate }),
+          ...(product.type === 'rent' && { startdate: product.startdate, enddate: product.enddate }),
+          ...(product.type === 'Customization' && { height: product.height, width: product.width, material: product.material, color: product.color }),
+        })),
+        total: discountedTotalPrice !== null ? discountedTotalPrice : calculateTotalPrice(),
+        status: "Pending", // Assuming initial status is Pending
+        address: selectedAddress, // Assuming you have a selected address
+        phone: "", // Add phone number if available
+        paymentMethod: selectedPayment, // Assuming you have a selected payment method
+        email: "", // Add email if available
+      };
+  
+      // Call the backend API to create the order
+      const response = await fetch('http://localhost:4000/Order/createOrder2', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `${token}`,
+        },
+        body: JSON.stringify(orderData),
+      });
+  
+      // Check if the request was successful
+      if (response.ok) {
+        const responseData = await response.json();
+        console.log('Order created successfully:', responseData);
+        // Optionally, you can redirect the user to a confirmation page or perform other actions
+      } else {
+        console.error('Failed to create order:', response.status);
+        // Handle the error appropriately (e.g., display an error message to the user)
+      }
+    } catch (error) {
+      console.error('Error during checkout:', error);
+      // Handle the error appropriately (e.g., display an error message to the user)
+    }
+  };
+  
+  
 
   return (
     <div className="CartPage">
@@ -459,7 +506,7 @@ console.log(productData);
             <div className="total-price">
               <p>Total: {discountedTotalPrice !== null ? discountedTotalPrice : calculateTotalPrice()} $</p>
             </div>
-            <button className="checkoutbtn" type="button" onClick={handlecheckout}>Checkout</button>
+            <button className="checkoutbtn" type="button" onClick={handlecheckouttwo}>Checkout</button>
           </div>
         </main>
       )}

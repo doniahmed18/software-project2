@@ -30,10 +30,7 @@ export class OrderService {
             throw new UnauthorizedException('Invalid token');
         }
     }
-    async createOrder(CreateOrderDto: CreateOrderDto): Promise<Order> {
-        const newProduct = new this.orderModel(CreateOrderDto);
-        return await newProduct.save();
-    }
+
 
     async getOrder(token: string): Promise<string> {
         this.validateToken(token);
@@ -71,7 +68,35 @@ export class OrderService {
             { new: true, upsert: true }
         );
     }
-    
+    async createOrder(CreateOrderDto: CreateOrderDto): Promise<Order> {
+        const newProduct = new this.orderModel(CreateOrderDto);
+        return await newProduct.save();
+    }
+    async createOrder2(token: string, createOrderDto: CreateOrderDto): Promise<Order> {
+        try {
+            // Validate the token
+            const userID = this.validateTokenAndGetUserID(token);
+            
+            // Construct a new order based on the provided DTO
+            const newOrder = new this.orderModel({
+                UserID: userID,
+                total: createOrderDto.total,
+                status: createOrderDto.status,
+                address: createOrderDto.address,
+                Date : Date.now(),
+                phone: createOrderDto.phone,
+                paymentMethod: createOrderDto.paymentMethod,
+                email: createOrderDto.email,
+                products: createOrderDto.products,
+            });
+
+            // Save the new order to the database
+            return await newOrder.save();
+        } catch (error) {
+            console.error('Error creating order:', error);
+            throw error; // Rethrow the error to handle it in the caller
+        }
+    }
     async editcustomizeOrder(token: string, id: string,color :string,material:string,height:string,width:string,type:string,quantity:number): Promise<Order> {
         this.validateToken(token);
         const userID = this.validateTokenAndGetUserID(token);
