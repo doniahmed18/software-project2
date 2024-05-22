@@ -24,122 +24,135 @@ const Cart: React.FC = () => {
   const [selectedPayment, setSelectedPayment] = useState<string>("");
   const [selectedAddress, setSelectedAddress] = useState<string>("");
 
+  const handleDelete = async (id: string) => {
+    try {
+      console.log("called");
+      console.log(id);
+      const response = await fetch(`http://localhost:4000/cart/deleteCart/${id}`, {
+        method: 'DELETE',
+        headers: {
+          Authorization: `${token}`
+        }
+      });
+      console.log(response.status);
+      if (response.status === 200) {
+        // Remove the deleted product from the state
+        setProductData(productData.filter((product) => product.id !== id));
+        console.log("Product deleted successfully");
+      }
+    } catch (error) {
+      console.error('Error deleting product from cart:', error);
+    }
+  };
+  
   const handlecheckout = async () => {
     try {
       for (let i = 0; i < productData.length; i++) {
         const item = productData[i];
-        console.log(item);
-        console.log("p");
-        console.log(item.id, "aaa");
-
-      if (item.type === 'purchase') {
-      console.log("product id: ", item._id);
-
-      const response = await fetch('http://localhost:4000/Order/editOrder', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `${token}`
-        },
-        body: JSON.stringify({
-          products: [
-            item.id,
-            item.quantity,
-            item.type,
-            item.height,
-            item.width,
-            item.material,
-            item.color,
-            item.startdate,
-            item.enddate
-          ]
-        }),
-            });
   
-      // Handle response
-      if (!response.ok) {
-        console.error('Adding failed');
-        if(response.status === 409) {
-        //  window.location.href = '/Login';
+        if (item.type === 'purchase') {
+          console.log("Product id: ", item.id);
+  
+          const response = await fetch('http://localhost:4000/Order/editOrder', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `${token}`
+            },
+            body: JSON.stringify({
+              products: [
+                item.id,
+                item.quantity,
+                item.type,
+                item.height,
+                item.width,
+                item.material,
+                item.color,
+                item.startdate,
+                item.enddate
+              ]
+            }),
+          });
+  
+  
         }
-      } else {
-        const data = await response.json();
-        console.log(data);
-        alert("Product is added to your cart")
-      }
-    }
-    else if (item.type === 'rent') {
-      console.log("product id: ", item._id);
-
-      const response = await fetch('http://localhost:4000/Order/editrentOrder', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `${token}`
-        },
-        body: JSON.stringify({
-          products: [
-            item.id,
-            item.type,
-            item.startdate,
-            item.enddate
-          ]
-        }), 
-            });
+        else if (item.type === 'rent') {
+          console.log("Product id: ", item.id);
   
-      // Handle response
-      if (!response.ok) {
-        console.error('Adding failed');
-        if(response.status === 409) {
-        //  window.location.href = '/Login';
+          const response = await fetch('http://localhost:4000/Order/editrentOrder', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `${token}`
+            },
+            body: JSON.stringify({
+              products: [
+                item.id,
+                item.type,
+                item.startdate,
+                item.enddate
+              ]
+            }),
+          });
+  
+  
+        } else if (item.type === 'Customization') {
+          console.log("Product id: ", item.id);
+  
+          const response = await fetch('http://localhost:4000/Order/editcustomizeOrder', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `${token}`
+            },
+            body: JSON.stringify({
+              products: [
+                item.id,
+                item.type,
+                item.height,
+                item.width,
+                item.material,
+                item.color
+              ]
+            }),
+          });
+  
+          if (!response.ok) {
+            console.error('Adding failed');
+            if (response.status === 409) {
+              //  window.location.href = '/Login';
+            }
+          } else {
+            const data = await response.json();
+            console.log(data);
+            alert("Product is added to your cart");
+          }
         }
-      } else {
-        const data = await response.json();
-        console.log(data);
-        alert("Product is added to your cart")
       }
-    }
-    else if (item.type === 'Customization') {
-      console.log("product id: ", item._id);
-
-      const response = await fetch('http://localhost:4000/Order/editcustomizeOrder', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `${token}`
-        },
-        body: JSON.stringify({
-          products: [
-            item.id,
-            item.type,
-            item.height,
-            item.width,
-            item.material,
-            item.color
-          ]
-        }), 
-      });
   
+      // After processing all products, delete them from the cart
+      for (let i = 0; i < productData.length; i++) {
+        const deleteResponse = await fetch(`http://localhost:4000/cart/deleteCart/${productData[i].id}`, {
+          method: 'DELETE',
+          headers: {
+            Authorization: `${token}`
+          }
+        });
   
-      // Handle response
-      if (!response.ok) {
-        console.error('Adding failed');
-        if(response.status === 409) {
-        //  window.location.href = '/Login';
+        if (deleteResponse.status === 200) {
+          setProductData((prevProductData) => prevProductData.filter((product) => product.id !== productData[i].id));
+          console.log("Product deleted successfully");
         }
-      } else {
-        const data = await response.json();
-        console.log(data);
-        alert("Product is added to your cart")
       }
-    }
-  }
+  
+      console.log("Products deleted from the cart after checkout");
     } catch (error) {
-      console.error('Error adding product to cart:', error);
+      console.error('Error during checkout:', error);
     }
-  
   };
-
+  
+  
+console.log(productData);
 
   const calculateTotalForCustomizationPrice = () => {
     let totalPrice = 0;
