@@ -1,0 +1,173 @@
+
+.ProductBoody{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff4e9;
+    margin: 0;
+    width: 100%;
+    padding: 0;
+    height: 100vh;
+    overflow: auto;
+    flex-direction: row;
+    
+}
+
+.ProductContainer{
+    display: flex;
+    flex-direction: row;
+    padding: 3%;
+    margin-left: 2%;
+    width :900px ;
+    margin-top: -5%;
+
+}
+.ProductImage{
+    width: 50%;
+}
+.ProductName{
+    font-size: 150%;
+}
+.ProductInfo{
+    display: flex;
+    flex-direction: column;
+    margin-left: 1%;
+}
+.Cat{
+    display: flex;
+    flex-direction: row;
+}
+.add-to-cart-button {
+    background-color: #991e66;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(245, 0, 122, 0.6); /* Adjust the spread (third value) for a softer glow */
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .add-to-cart-button:hover {
+    box-shadow: 0 0 10px rgba(219, 52, 144, 0.8); /* Increase glow on hover */
+  }
+  .productboddy{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1%;
+  }
+  .ProductTitle{
+    font-size: 250%;
+    margin-bottom: 0%;
+    color: #1A4D2E;
+  }
+  .ProductCategory{
+    white-space: nowrap;
+  }
+  .ProductHeader{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1%;
+    gap: 20px;
+  }
+  .copybut{
+    background-color:#1A4D2E;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 5px white; /* Adjust the spread (third value) for a softer glow */
+    transition: box-shadow 0.3s ease;
+    margin-top: 15%;
+
+  }
+  .gerrge{
+    color: #1A4D2E;
+  }
+  .profile-icon{
+    color: black;
+  }
+  .ReviewContainer{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2%;
+    margin-left: 2%;
+
+    padding: 10px;
+
+  }
+  .add-review-button{
+    background-color: #1A4D2E;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 5px white; /* Adjust the spread (third value) for a softer glow */
+    transition: box-shadow 0.3s ease;
+  }
+  .ProductReviewHeader{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .ProductReviews {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2%;
+    margin-left: 2%;
+    border: 1px solid #991e66;
+    border-radius: 8px;
+    padding: 10px;
+    max-height: 500px; /* Adjust the max-height as needed */
+    height: 500px;
+    overflow: auto; /* Add scrollbars when content overflows */
+    width: 400px;
+  }
+  .Review{
+    border-bottom: 1px solid #777777;
+  }
+  
+  .AddReviewForm{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2%;
+    margin-left: 2%;
+    border: 1px solid #991e66;
+    box-shadow: #777777;
+    border-radius: 8px;
+    padding: 10px;
+    z-index: 3;
+  }
+  .revbutts{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 2%;
+    gap: 10px;
+  }
+  .SaveReviewButton{
+    background-color: green;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(245, 0, 122, 0.6); /* Adjust the spread (third value) for a softer glow */
+    transition: box-shadow 0.3s ease;
+  }
+ 
+  .CancelReviewButton{
+    background-color: red;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(245, 0, 122, 0.6); /* Adjust the spread (third value) for a softer glow */
+    transition: box-shadow 0.3s ease;
+  }

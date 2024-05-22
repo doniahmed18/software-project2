@@ -1,0 +1,231 @@
+html {
+    color: #F5EFE6;
+    background-color: #F5EFE6;
+
+}
+.signupcontainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+}
+.signuptitle{
+    font-size: 150%;
+    font-weight: 500;
+    color: #1A4D2E;
+}
+.email::placeholder,
+.Password::placeholder,
+.Username::placeholder
+{
+    color: black; /* Change the color to your desired value */
+}
+.Password{
+    width: 25%;
+    padding-top: 0.7%;
+    margin-bottom: 12px;
+    padding-bottom: 0.7%;
+    color: black;
+    border-radius: 8px; 
+    border: 1px solid #ccc; 
+}
+
+.Username{
+    width: 25%;
+    padding-top: 0.7%;
+    margin-bottom: 12px;
+    padding-bottom: 0.7%;
+    color: black;
+    border-radius: 8px; 
+    border: 1px solid #ccc; 
+  
+}
+.Name{
+    display: flex;
+    flex-direction: row;
+    padding-top: 0.7%;
+
+    justify-content: space-between;
+    width: 25%;
+  
+}
+.email{
+    width: 25%;
+    padding-top: 0.7%;
+    margin-bottom: 12px;
+    padding-bottom: 0.7%;
+    color: black;
+    border-radius: 8px; 
+    border: 1px solid #ccc; 
+}
+.FirstName{
+    width: 50%;
+    padding-top: 0.7%;
+    margin-bottom: 12px;
+    margin-right: 1%;
+    padding-bottom: 0.7%;
+    color: black;
+    border-radius: 8px; 
+    border: 1px solid #ccc; 
+}
+.LastName{
+    width: 50%;
+    padding-top: 0.7%;
+    margin-bottom: 12px;
+    padding-bottom: 0.7%;
+    color: black;
+    border-radius: 8px; 
+    border: 1px solid #ccc; 
+}
+.phone{
+    width: 25%;
+    padding-top: 0.7%;
+    margin-bottom: 12px;
+    padding-bottom: 0.7%;
+    color: black;
+    border-radius: 8px; 
+    border: 1px solid #ccc; 
+}
+.address{
+    width: 25%;
+    padding-top: 0.7%;
+    margin-bottom: 12px;
+    padding-bottom: 0.7%;
+    color: black;
+    border-radius: 8px; 
+    border: 1px solid #ccc; 
+}
+.Company{
+    width: 25%;
+    padding-top: 0.7%;
+    margin-bottom: 12px;
+    padding-bottom: 0.7%;
+    color: black;
+    border-radius: 8px; 
+    border: 1px solid #ccc; 
+}
+.signup{
+    width: 13%;
+    color: white;
+    background-color: #1A4D2E;
+    margin-top: 2.5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border-radius: 8px; 
+}
+.signupPage{
+    height: 100vb;
+    background-color: #F5EFE6;
+}
+.popuperror-inner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+    border: 1px solid black;
+    padding: 2%;
+}
+.popuperror-inner h2{
+    font-size: 150%;
+    font-weight: 500;
+    color: red;
+}
+.popuperror-inner button{
+    width: 23%;
+    background-color: black;
+    color: white;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border-radius: 8px; 
+}
+.popuperror-inner button:hover{
+    background-color: white;
+    color: black;
+    
+}
+.faTriangleExclamation-icon{
+    color: red;
+    font-size: 300%;
+
+}
+.popupsucess-inner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+    border: 1px solid black;
+    padding: 7%;
+    width: 140%;
+    margin-left: -25%;
+}
+.popupsucess-inner h2{
+    font-size: 150%;
+    font-weight: 500;
+    color: green;
+}
+.faCheckCircle-icon{
+    color: green;
+    font-size: 300%;
+}
+.popupsucess-inner button{
+    width: 90%;
+    background-color: black;
+    color: white;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border-radius: 8px; 
+}
+.popupsucess-inner button:hover{
+    background-color: white;
+    color: black;
+    
+}
+.popupsucess-inner p{
+    font-size: 120%;
+    font-weight: 500;
+    word-wrap: nowrap;
+}
+.signupPage{
+    height: 100vb;
+}
+.popupsucess-inner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+    border: 1px solid black;
+    padding: 7%;
+    width: 140%;
+    margin-left: -25%;
+}
+.popupsucess-inner h2{
+    font-size: 150%;
+    font-weight: 500;
+    color: green;
+}
+.faCheckCircle-icon{
+    color: green;
+    font-size: 300%;
+}
+.popupsucess-inner button{
+    width: 90%;
+    background-color: black;
+    color: white;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border-radius: 8px; 
+}
+.popupsucess-inner button:hover{
+    background-color: white;
+    color: black;
+    
+}
+.popupsucess-inner p{
+    font-size: 120%;
+    font-weight: 500;
+    word-wrap: nowrap;
+}

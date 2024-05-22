@@ -1,0 +1,148 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color:#1A4D2E;
+    position: relative; /* Add position relative */
+    z-index: 1; /* Ensure navbar stays above other content */
+}
+
+/* Rest of your CSS styles remain unchanged */
+
+.dropdown-menu {
+    position: absolute; /* Change position to absolute */
+    top: calc(60% + 1px); /* Position the dropdown below the navbar */
+    background-color: #1A4D2E; /* Darker color */
+    list-style: none;
+    padding: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 2; /* Ensure the dropdown appears above other elements */
+}
+
+  .logo {
+    width: 300px;
+    height: 60px;
+  }
+  
+  .logo img {
+    width: 60%;
+    height: 60px;
+  }
+  
+  .nav-items {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-direction: row;
+  }
+  
+  .nav-link {
+    position: relative;
+    border-bottom: 20px solid transparent; 
+    margin-bottom: -20px; 
+  }
+  
+ 
+
+  .dropdown-menu li a {
+    color: #fff; /* Make the text color white */
+    text-decoration: none; /* Remove underline */
+  }
+  
+  .nav-link:hover .dropdown-menu {
+    display: block;
+  }
+  
+  .nav-link, .active-link {
+    color: #fff;
+    text-decoration: none;
+  }
+  .search-bar {
+    margin-left: auto;
+    margin-right: 2rem;
+  }
+  
+  .search-bar input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .profile-links{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .profile-icon {
+    font-size: 1.5rem; /* Adjust this value as needed */
+    color: #fff;
+  }
+  .cart-icon {
+    font-size: 1.5rem; /* Adjust this value as needed */
+    color: #fff;
+  }
+  .guestt{
+    color: #fff4e9;
+  }
+  .wishlist-icon {
+    font-size: 1.5rem; /* Adjust this value as needed */
+    color: #ffd000;
+  }
+  .categories-icon {
+    margin-right: 0.5rem; /* Add some space between the icon and the text */
+  }
+
+  .checkoutbtn{
+
+    color: black;
+    background-color: #fff4e9;
+    padding: 4%;
+    border-radius: 8px; 
+    border: 1px solid #ccc; 
+  }
+  
+@media only screen and (max-width: 600px) {
+
+  .categoryinnav,
+  .logo {
+    display: none;
+  }
+  .nav-items {
+    display: none;
+  }
+  .formobile {
+    position: relative; /* Add position relative */
+    flex-direction: row-reverse;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-left: auto;
+  
+  }
+  .dropdown-menuu {
+    position: fixed; /* Change position to fixed */
+    top: 5%; /* Adjust top position as needed to align with the bottom of the navbar */
+    left: auto;
+    width: auto;
+    background-color: #991e66;
+    list-style: none;
+    padding: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+
+  }
+
+  .formobile:hover .dropdown-menu {
+    display: block;
+  }
+  
+.dropdown-menuu li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+
+}

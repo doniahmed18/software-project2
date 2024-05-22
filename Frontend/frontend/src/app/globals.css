@@ -1,0 +1,524 @@
+.firstpage{
+  width: 100%;
+  height: 100%;
+  background-color: #F5EFE6;
+}
+.react-slideshow-container{
+height: 550px!important;
+align-items: start ;
+}
+.exploremore-container ul {
+  list-style: none;
+}
+
+.each-slide-effect > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    height: 550px;
+   
+  }
+  /* Add your preferred global styles here */
+
+  .offerval{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 19px;
+  }
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+  height: 100%;
+}
+
+.product-card {
+  background-color: #4F6F52; /* Set the background color */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin: 10px;
+  overflow: hidden;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative; /* Add position relative for absolute positioning */
+  height: auto;
+}
+
+.product-image-container {
+  position: relative;
+  overflow: hidden;
+}
+.product-image{
+  height: 220px;
+}
+.product-image-container img {
+  display: flex;
+  margin-left: 8%;
+  width: 60%;
+
+  transition: transform 0.3s ease;
+  border-image-width: 2%;
+}
+
+.product-image-container:hover img {
+  transform: scale(1.1);
+  filter: brightness(50%);
+}
+
+.product-image-container::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.view-product-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: black;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.product-image-container:hover .view-product-button {
+  opacity: 1;
+}
+
+.add-to-wishlist-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.add-to-wishlist-button.selected {
+  color: #e74c3c;
+}
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  text-align: center; 
+  color:#E8DFCA 
+}
+
+.product-details h2 {
+  margin-bottom: 5px;
+}
+
+.product-details p {
+  margin: 5px 0;
+  opacity: 0.7;
+}
+
+.product-details p.price {
+  font-weight: bold;
+  font-size: larger;
+  color: #12130f;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.add-to-cart-button {
+  background-color: #991e66;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(245, 0, 122, 0.6); /* Adjust the spread (third value) for a softer glow */
+  transition: box-shadow 0.3s ease;
+}
+.rent-button{
+  background-color: #991e66;
+  width: 40%;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(245, 0, 122, 0.6); /* Adjust the spread (third value) for a softer glow */
+  transition: box-shadow 0.3s ease;
+}
+.add-to-cart-button:hover {
+  box-shadow: 0 0 10px rgba(219, 52, 144, 0.8); /* Increase glow on hover */
+}
+.homepage{
+  background-color: white;
+
+}
+  .slidebut{
+    background-color: #991e66;
+    color: white;
+    padding: 1%;
+    border-radius: 8px;
+    
+  }
+  .each-slide-effect span {
+    padding: 20px;
+    font-size: 20px;
+    background:white;
+    text-align: center;
+  }
+  .each-slide-effect {
+    position: relative; 
+    height: 550px;
+  }
+  
+  .each-slide-effect p {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    font-size: 140%;
+    font-weight: bold;
+    color: red;
+    text-align: center;
+    background: white;
+    margin: 0;
+  }
+  .firstpage h1{
+margin-top: 2%;
+margin-left: 2%;
+
+  }
+  .firstpage h1 span {
+color: #000;
+padding: 3px 5px;
+font-family: poppins;
+display: table-cell;
+font-size: 1.5em;
+text-shadow: 0px 15px 25px rgba(0, 0, 0, 0.5);
+  }
+  .firstpage h1:hover span{
+    color: #991e66;
+    animation: dance .5s infinite;
+    cursor: pointer;
+    }
+    @keyframes dance {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-30px); }
+        100% { transform: translateY(0px); }
+      }
+  .firstpage h1 span:nth-child(1) {
+  animation-delay: .2s;
+}
+.firstpage h1 span:nth-child(1) {
+    animation-delay: .4s;
+  }
+  .firstpage h1 span:nth-child(2) {
+    animation-delay: .6s;
+  }
+  .firstpage h1 span:nth-child(3) {
+    animation-delay: .8s;
+  }
+  .firstpage h1 span:nth-child(5) {
+    animation-delay: 1.2s;
+  }
+  .firstpage h1 span:nth-child(6) {
+    animation-delay: 1.4s;
+  }
+  .firstpage h1 span:nth-child(7) {
+    animation-delay: 1.6s;
+  }
+  .firstpage h1 span:nth-child(8) {
+    animation-delay: 1.8s;
+  }
+  .firstpage h1 span:nth-child(4) {
+    animation-delay: 1s;
+  }
+.firstpage p{
+    font-size: 120%;
+    padding: 1%;
+}
+.welcome{
+    margin-top: 5%;
+    margin-left: 1%;
+}
+.storename {
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and transform */
+  }
+  
+  .storename:hover {
+    color: #991e66;
+    transform: translateY(-5px); 
+    cursor: pointer; 
+
+  }.mostselling-container-wrapper {
+    overflow-x: auto;
+    border-radius: 10px;
+    padding: 2%;
+    margin: 3%;
+    margin-bottom: 3%;
+    border: 1px solid #000;
+    -ms-overflow-style: none;
+    scrollbar-width: none; 
+  }
+  
+  .mostselling-container-wrapper::-webkit-scrollbar {
+    display: none; 
+  }
+  
+  .mostselling-container {
+    display: flex;
+    flex-wrap: nowrap; 
+    overflow-x: auto; 
+    gap: 10px; 
+    padding: 10px;
+    align-items: center;
+  }
+  
+  .mostsellingproduct-card {
+    flex: 0 0 270px; 
+    background-color: #4F6F52;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; 
+  }
+  .firstpage h2{
+    margin-left: 1%;
+  }
+  .view-more-button{
+    width: 20%;
+    color: white;
+    background-color: black;
+    margin-top: 2.5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border-radius: 8px; 
+    height: 30%;
+  }
+  /* AnimatedArrowButton.css */
+/* Variables */
+:root {
+  --black: #4c4c4c;
+  --gray: #808080;
+  --text-arrow-space: 16px;
+  --shaft-width: 1px;
+  --newshaft-width: 64px;
+  --shaft-thickness: 1px;
+  --arrow-head-width: 8px;
+  --arrow-head-thickness: var(--shaft-thickness);
+}
+
+/* Base */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  background: white;
+  height: 100%;
+  font-family: 'Helvetica Neue LT W01_41488878';
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.exploremore-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin-right: 5%;
+}
+.exploremore-container ::marker{
+display: block !important;
+visibility: hidden !important;
+}
+ul {
+  li {
+    margin: 0 0 24px;
+  }
+}
+
+/* The Arrow */
+.the-arrow {
+  width: var(--shaft-width);
+  transition: all 0.2s;
+
+  &.-left {
+    position: absolute;
+    top: 60%;
+    left: 0;
+
+    > .shaft {
+      width: 0;
+      background-color: var(--black);
+
+      &:before,
+      &:after {
+        width: 0;
+        background-color: var(--black);
+      }
+
+      &:before {
+        transform: rotate(0);
+      }
+
+      &:after {
+        transform: rotate(0);
+      }
+    }
+  }
+
+  &.-right {
+    top: 3px;
+
+    > .shaft {
+      width: var(--shaft-width);
+      transition-delay: 0.2s;
+
+      &:before,
+      &:after {
+        width: var(--arrow-head-width);
+        transition-delay: 0.3s;
+        transition: all 0.5s;
+      }
+
+      &:before {
+        transform: rotate(40deg);
+      }
+
+      &:after {
+        transform: rotate(-40deg);
+      }
+    }
+  }
+
+  > .shaft {
+    background-color: var(--black);
+    display: block;
+    height: var(--shaft-thickness);
+    position: relative;
+    transition: all 0.2s;
+    transition-delay: 0;
+    will-change: transform;
+
+    &:before,
+    &:after {
+      background-color: var(--black);
+      content: '';
+      display: block;
+      height: var(--arrow-head-thickness);
+      position: absolute;
+      top: 0;
+      right: 0;
+      transition: all 0.2s;
+      transition-delay: 0;
+    }
+
+    &:before {
+      transform-origin: top right;
+    }
+
+    &:after {
+      transform-origin: bottom right;
+    }
+  }
+}
+
+/* Animated Arrow Button */
+.animated-arrow {
+  display: inline-block;
+  color: var(--black);
+  font-size: 1.25em;
+  font-style: italic;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.2s;
+
+  &:hover {
+    color: var(--gray);
+
+    > .the-arrow.-left {
+      > .shaft {
+        width: var(--newshaft-width);
+        transition-delay: 0.1s;
+        background-color: var(--gray);
+
+        &:before,
+        &:after {
+          width: var(--arrow-head-width);
+          transition-delay: 0.1s;
+          background-color: var(--gray);
+        }
+
+        &:before {
+          transform: rotate(40deg);
+        }
+
+        &:after {
+          transform: rotate(-40deg);
+        }
+      }
+    }
+
+    > .main {
+      transform: translateX(calc(var(--shaft-width) + var(--text-arrow-space)));
+      transform: translateX(calc(var(--newshaft-width) + var(--text-arrow-space)));
+
+      > .the-arrow.-right {
+        > .shaft {
+          width: 0;
+          transform: translateX(200%);
+          transition-delay: 0;
+
+          &:before,
+          &:after {
+            width: 0;
+            transition-delay: 0;
+            transition: all 0.1s;
+          }
+
+          &:before {
+            transform: rotate(0);
+          }
+
+          &:after {
+            transform: rotate(0);
+          }
+        }
+      }
+    }
+  }
+
+  > .main {
+    display: flex;
+    align-items: center;
+    transition: all 0.2s;
+
+    > .text {
+      margin: 0 var(--text-arrow-space) 0 0;
+      line-height: 1;
+    }
+
+    > .the-arrow {
+      position: relative;
+    }
+  }
+}

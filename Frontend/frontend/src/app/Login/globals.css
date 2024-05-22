@@ -1,0 +1,146 @@
+html {
+    color: #F5EFE6;
+    background-color: #F5EFE6;
+}
+.logincontainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+}
+.logintitle{
+    font-size: 150%;
+    font-weight: 500;
+    color: #1A4D2E;
+}
+.email{
+    width: 25%;
+    padding-top: 0.7%;
+    margin-bottom: 12px;
+    padding-bottom: 0.7%;
+    color: black;
+    border-radius: 8px;
+    border: 1px solid #ccc; 
+    
+}
+.signupa{
+    color: blue;
+}
+.Forgeta{
+    color: blue;
+}
+.loginPage{
+    height: 100vh;
+    background-color: #F5EFE6;
+}
+.email::placeholder,
+.password::placeholder {
+    color: black; /* Change the color to your desired value */
+}
+.forget{
+    font-size: 90%;
+}
+.login{
+    width: 13%;
+    color: white;
+    background-color: #1A4D2E;
+    margin-top: 2.5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+
+    border-radius: 8px; 
+}
+.signupa{
+    padding-top: 1%;
+    font-size: 90%;
+}
+.passcon{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+   
+}
+.password{
+    width: 25%;
+    padding-top: 0.7%;
+    margin-bottom: 12px;
+    padding-bottom: 0.7%;
+    margin-left: 1.39%;
+    border-radius: 8px; 
+    border: 1px solid #ccc; 
+}
+.password-toggle {
+    
+  margin-bottom: 1%;
+
+    z-index: 2;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .popuperror-inner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+    border: 1px solid black;
+    padding: 2%;
+    width: 150%;
+    margin-left: -25%;
+}
+.popuperror-inner h2{
+    font-size: 150%;
+    font-weight: 500;
+    color: red;
+}
+.popuperror-inner button{
+    width: 23%;
+    background-color: black;
+    color: white;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border-radius: 8px; 
+}
+.popuperror-inner button:hover{
+    background-color: white;
+    color: black;
+    
+}
+.faTriangleExclamation-icon{
+    color: red;
+    font-size: 300%;
+
+}
+  @media only screen and (max-width: 600px) {
+   .forget{
+    font-size: 100%;
+ 
+   } 
+   .logincontainer{
+    width: 100%;
+   }
+   .signupa{
+    padding-top: 1%;
+    font-size: 100%;
+}
+.password{
+    width: 25%;
+    padding-top: 0.7%;
+    margin-bottom: 12px;
+    padding-bottom: 0.7%;
+    margin-left: 6%;
+    border-radius: 8px; 
+    border: 1px solid #ccc; 
+}
+.email{
+    width: 105%;
+
+  }
+  .login{
+    width: 20%;
+  }
+}

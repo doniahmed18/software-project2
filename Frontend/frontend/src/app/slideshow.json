@@ -1,0 +1,24 @@
+
+[
+    {
+       "id": 1,
+       "Image":"https://www.goplasticpallets.com/wp-content/uploads/2020/09/bii.jpg",
+       "category":"Plastic",
+       "catid":""
+   
+    } ,
+    {
+       "id": 2,
+       "Image":"https://auto-khaled.com/wp-content/uploads/2020/02/auto-khaled-wooden-pallet-lebanon.jpg",
+         "category":"Wood",
+         "catid":"3c019b6f-8787-46d2-b445-dcead15dd315"
+    } ,
+    
+    {
+       "id": 3,
+       "Image":"https://m.heavydutypalletracking.com/photo/pl3145829-lightweight_industrial_stainless_steel_pallets_with_4_way_2_way_entry_custom.jpg",
+         "category":"stailness steel",
+         "catid":"f3d7c7e-415a-4f30-8dbb-985d0dc923c4"
+    } 
+   
+   ]

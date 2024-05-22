@@ -1,0 +1,133 @@
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff4e9;
+  }
+  .cartmain{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+  }
+  .table-header {
+    color: #888282;
+    padding-left: 10px;
+    justify-content: space-between;
+    padding: 10px;
+  }
+  .table-header th {
+    flex: 1;
+    
+    width: 33.33%; /* Set a fixed width for each th, making them take equal space */
+  }
+  
+  .CartPage{
+    background-color: #fff4e9;
+  }
+  .product {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 13%;
+    padding: 3%;
+  }
+  .product-info{
+  font-size: 90%;
+  }
+  
+  .product-img {
+    width: 30%;
+    height: 30%;
+    padding-right: 3.6%;
+  }
+  .quantity{
+    display: flex;
+    flex-direction: row;
+    border: black 1px solid;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3%;
+    width: 20%;
+    margin-left: 39%;
+    padding: 0.7%;
+   
+  }
+  .btn-minus, .btn-plus{
+    background-color: #fff4e9;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 18%;
+    
+    
+  }
+  .total{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+  }
+  
+  .items {
+    border-bottom: 1px solid #CBCBCB; 
+    width: 80%;
+  }
+  .del{
+    margin-left: 65%;
+    align-items: center;
+    display: flex;
+    margin-top: -8%;
+    z-index: 1;
+    background-color: #fff4e9;
+    border: none;
+  }
+  .fa-trash{
+
+    border: none;
+  
+  }
+  .total-price{
+    margin-left: 15%;
+    margin-top: 30%;
+    font-size: 120%;
+  }
+  .checkout{
+    display :flex;
+    flex-direction: column;
+    margin-left: 50%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 20%;
+  }
+  .checkoutbtn{
+    width: 50%;
+    color: white;
+    background-color: black;
+    padding: 4%;
+    border-radius: 8px; 
+    border: 1px solid #ccc; 
+  }
+  @media only screen and (max-width: 600px) {
+  
+    .del{
+      margin-left: 79%;
+      margin-top: -25%;
+    }
+    .quantity{
+      margin-top: 13%;
+      width: 58%;
+      margin-left: 15%;
+      padding: 0.7%;
+     
+    }
+    .checkoutbtn{
+      width: 80%;
+    }
+  }

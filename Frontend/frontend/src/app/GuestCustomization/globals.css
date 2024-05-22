@@ -1,0 +1,237 @@
+
+.ProductBoody{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff4e9;
+    margin: 0;
+    width: 100%;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .ProductContainer{
+    display: flex;
+    flex-direction: row;
+    padding: 3%;
+    margin-left: 2%;
+    width: 100%;
+  }
+  .ProductImage{
+    width: 50%;
+  }
+  .ProductName{
+    font-size: 150%;
+  }
+  .ProductInfo{
+    display: flex;
+    flex-direction: column;
+    margin-left: 1%;
+  }
+  .Cat{
+    display: flex;
+    flex-direction: row;
+  }
+  .add-to-cart-button {
+    background-color: #1A4D2E;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 5px white; /* Adjust the spread (third value) for a softer glow */
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .add-to-cart-button:hover {
+    box-shadow: 0 0 10px black; /* Increase glow on hover */
+  }
+  .productboddy{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1%;
+  }
+  .ProductTitle{
+    font-size: 250%;
+    margin-bottom: 0%;
+  }
+  .ProductCategory{
+    white-space: nowrap;
+  }
+  .ProductHeader{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1%;
+    gap: 20px;
+  }
+  .copybut{
+    background-color:#1A4D2E;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 5px white; /* Adjust the spread (third value) for a softer glow */
+    transition: box-shadow 0.3s ease;
+    margin-top: 15%;
+  
+  }
+  .copybut :hover{
+    box-shadow: 0 0 10px black; /* Increase glow on hover */
+  }
+  .profile-icon{
+    color: black;
+  }
+  .ReviewContainer{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2%;
+    margin-left: 2%;
+  
+    padding: 10px;
+  
+  }
+  .add-review-button{
+    background-color: #1A4D2E;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 5px white; /* Adjust the spread (third value) for a softer glow */
+    transition: box-shadow 0.3s ease;
+  }
+  .ProductReviewHeader{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .ProductReviews {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2%;
+    margin-left: 2%;
+    border: 1px solid #1A4D2E;
+    border-radius: 8px;
+    padding: 10px;
+    max-height: 500px; /* Adjust the max-height as needed */
+    overflow: auto; /* Add scrollbars when content overflows */
+    width: 570px;
+    position: relative; /* Ensure relative positioning for absolute positioning within */
+  
+  }
+  .Review{
+    border-bottom: 1px solid #777777;
+  }
+  .date-picker {
+    height: 25px;
+    border-radius: 6px;
+    z-index: 10; /* Ensure the date picker appears above other elements */
+    position: relative; /* Ensure the date picker appears above other elements */
+  }
+  
+  .date-picker__calendar {
+    /* Styles for the calendar */
+    background-color: #1A4D2E;
+  }
+  .calendar-container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2%;
+    margin-left: 2%;
+    gap: 16px;
+
+    border-radius: 8px;
+    padding: 10px;
+    z-index: 3;
+  
+  }
+  .AddReviewForm{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2%;
+    margin-left: 2%;
+    border: 1px solid #1A4D2E;
+    box-shadow: #777777;
+    border-radius: 8px;
+    padding: 10px;
+    z-index: 3;
+  }
+  .revbutts{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 2%;
+    gap: 10px;
+  }
+  .SaveReviewButton{
+    background-color: green;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(245, 0, 122, 0.6); /* Adjust the spread (third value) for a softer glow */
+    transition: box-shadow 0.3s ease;
+  }
+  .fixedtime{
+  display: flex;
+  flex-direction: row;
+  
+  }
+  .tree-icon{
+    color: brown;
+  
+  }
+  .plastic-icon{
+    color: blue;
+  }
+  .iron-icon{
+    color: grey;
+  }
+  .percent-icon{
+    color: red;
+  }
+  .timecard{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2%;
+    margin-left: 2%;
+    border: 3px solid #4F6F52;
+    box-shadow: #777777;
+    border-radius: 8px;
+    padding: 10px;
+    z-index: 3;
+  
+  }
+  .CancelReviewButton{
+    background-color: red;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(245, 0, 122, 0.6); /* Adjust the spread (third value) for a softer glow */
+    transition: box-shadow 0.3s ease;
+  }
+  .selected {
+    border: 2px solid gold; /* Example border style */
+    box-shadow: 0 0 10px gold; /* Example box shadow */
+  }
+  .height{
+    display: flex;
+    flex-direction: column;
+
+  }
+  .wid{
+    width: 20%;
+    height: 20px;
+    border: #991e66;
+    border-radius: 5px;
+  }
+
+  

@@ -1,0 +1,112 @@
+html {
+    color: #F5EFE6;
+    background-color: #F5EFE6;
+
+}
+.ForgetPass{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+        height: 100vh;
+}
+.email{
+    width: 100%;
+    padding-top: 0.7%;
+    margin-bottom: 12px;
+    padding-bottom: 0.7%;
+    color: black;
+    border-radius: 8px;
+    border: 1px solid #ccc; 
+}
+.enteryou{
+    color: #1A4D2E;
+}
+.ForgetPass-inner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.ForgetPass-btn{
+    width: 33%;
+    color: #F5EFE6;
+    background-color: #1A4D2E;
+    margin-top: 2.5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border-radius: 8px; 
+}
+.popuperror-inner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+    border: 1px solid black;
+    padding: 2%;
+    width: 150%;
+    margin-left: -25%;
+}
+.popuperror-inner h2{
+    font-size: 150%;
+    font-weight: 500;
+    color: red;
+}
+.popuperror-inner button{
+    width: 23%;
+    background-color: black;
+    color: white;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border-radius: 8px; 
+}
+.popuperror-inner button:hover{
+    background-color: white;
+    color: black;
+    
+}
+.faTriangleExclamation-icon{
+    color: red;
+    font-size: 300%;
+
+}
+.popupsucess-inner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+    border: 1px solid black;
+    padding: 7%;
+    width: 140%;
+    margin-left: -25%;
+}
+.popupsucess-inner h2{
+    font-size: 150%;
+    font-weight: 500;
+    color: green;
+}
+.faCheckCircle-icon{
+    color: green;
+    font-size: 300%;
+}
+.popupsucess-inner button{
+    width: 90%;
+    background-color: black;
+    color: white;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border-radius: 8px; 
+}
+.popupsucess-inner button:hover{
+    background-color: white;
+    color: black;
+    
+}
+.popupsucess-inner p{
+    font-size: 120%;
+    font-weight: 500;
+    word-wrap: nowrap;
+}

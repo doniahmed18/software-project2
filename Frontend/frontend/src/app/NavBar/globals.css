@@ -1,0 +1,134 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color:#1A4D2E;
+  position: relative; /* Add position relative */
+  z-index: 1; /* Ensure navbar stays above other content */
+}
+
+/* Rest of your CSS styles remain unchanged */
+
+.dropdown-menu {
+  position: absolute; /* Change position to absolute */
+  top: calc(60% + 1px); /* Position the dropdown below the navbar */
+
+  background-color: #1A4D2E; /* Darker color */
+  list-style: none;
+  padding: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 2; /* Ensure the dropdown appears above other elements */
+}
+
+  
+  .logo {
+    width: 300px;
+    height: 60px;
+  }
+  
+  .logo img {
+    width: 60%;
+    height: 60px;
+  }
+  
+  .nav-items {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .nav-link {
+    position: relative;
+    border-bottom: 20px solid transparent;
+    margin-bottom: -20px;
+  }
+  
+
+  
+  .dropdown-menu li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .nav-link:hover .dropdown-menu {
+    display: block;
+  }
+  
+  .nav-link,
+  .active-link {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .search-bar {
+    margin-left: auto;
+    margin-right: 2rem;
+  }
+  
+  .search-bar input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-icon,
+  .cart-icon {
+    font-size: 1.5rem;
+    color: #fff;
+  }
+  
+  .wishlist-icon {
+    font-size: 1.5rem;
+    color: #ffd000;
+  }
+  .home-icon{
+    font-size: 1.5rem;
+    color: #fff;
+  }
+  .heart-icon{
+    font-size: 1.5rem;
+    color: red;
+  }
+  
+  .categories-icon {
+    margin-right: 0.5rem;
+  }
+  
+  .formobile {
+  display: none;
+  }
+    
+  @media only screen and (max-width: 600px) {
+  
+    .categoryinnav,
+    .logo {
+      display: none;
+    }
+    .nav-items {
+      display: none;
+    }
+    .formobile {
+      position: relative; /* Add position relative */
+      flex-direction: row-reverse;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-left: auto;
+    
+    }
+ 
+    .formobile:hover .dropdown-menu {
+      display: block;
+    }
+    
+  .dropdown-menuu li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  
+  }
