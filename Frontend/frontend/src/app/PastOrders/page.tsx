@@ -63,83 +63,85 @@ const PastOrders: React.FC = () => {
   
   useEffect(() => {
     fetch("http://localhost:4000/Order/getOrder", {
-      headers: {
-        Authorization: `${token}`,
-      },
+        headers: {
+            Authorization: `${token}`,
+        },
     })
-      .then((res) => {
+    .then((res) => {
         if (res.status === 401) {
-          console.log("Unauthorized");
-          window.location.href = "/Login";
-          return [];
+            console.log("Unauthorized");
+            window.location.href = "/Login";
+            return [];
         }
         if (!res.ok) {
-          console.log("An error occurred");
-          return [];
+            console.log("An error occurred");
+            return [];
         }
         return res.json();
-      })
-      .then((data) => {
+    })
+    .then((data) => {
         console.log("data:", data);
-        setProducts(data); 
-  
-        const productArray = data.map((order: any) => order.products); 
-        console.log("productArray: ", productArray);
-  
-        const flattenedProductArray = productArray.flat();
-        console.log("flattenedProductArray: ", flattenedProductArray);
-        setProductArray(flattenedProductArray);
-  
-        const productInfoRequests = flattenedProductArray.map((productInfo: any) => {
-          const productId = productInfo[0]; 
-          const quantity = productInfo[1];
-          console.log("productId: ", productId);
-          return fetch(`http://localhost:4000/products/getProduct/${productId}`, {
-            headers: {
-              Authorization: `${token}`,
-            },
-          })
+        const productsArray = data.map((order: any) => order.products).flat(); // Extracting the products array from each order object
+        setProducts(productsArray);
+
+        console.log("productsArray:", productsArray); // Check productsArray
+        
+        const productInfoRequests = productsArray.map((productInfo: any) => {
+            const productId = productInfo.id; 
+            const quantity = productInfo.quantity;
+            console.log("productId: ", productId);
+            return fetch(`http://localhost:4000/products/getProduct/${productId}`, {
+                headers: {
+                    Authorization: `${token}`,
+                },
+            })
             .then((res) => res.json())
             .then((productData) => ({
-              ...productData,
-              quantity: quantity,
+                ...productData,
+                quantity: quantity,
             }));
         });
-  
+
+        console.log("productInfoRequests:", productInfoRequests); // Check productInfoRequests
+
         Promise.all(productInfoRequests)
         .then((productInfoData) => {
-          console.log("Product Info Data: ", productInfoData);
-          setProductData(productInfoData); 
-  
-          // Combine order info and product info into an array of objects
-          const combinedDataArray = data.map((order: any) => {
-            const productInfos = order.products.map(([productId, quantity]: any) => {
-              const productInfo = productInfoData.find((info: any) => info._id === productId);
-              return {
-                ...productInfo,
-                quantity: quantity
-              };
+            console.log("Product Info Data: ", productInfoData);
+            setProductData(productInfoData); 
+
+            // Combine order info and product info into an array of objects
+            const combinedDataArray = data.map((order: any) => {
+                const productInfos = order.products.map(({ id, quantity }: any) => {
+                    const productInfo = productInfoData.find((info: any) => info._id === id);
+                    return {
+                        ...productInfo,
+                        quantity: quantity
+                    };
+                });
+
+                return {
+                    orderInfo: order,
+                    productInfos: productInfos
+                };
             });
-          
-            return {
-              orderInfo: order,
-              productInfos: productInfos
-            };
-          });
-          
-  
-          console.log("Combined Data:", combinedDataArray);
-          setcombinedArray(combinedDataArray);
+
+            console.log("Combined Data:", combinedDataArray);
+            setcombinedArray(combinedDataArray);
         })
         .catch((error) => {
-          console.error("Error fetching product info:", error);
+            console.error("Error fetching product info:", error);
         });
-      })
-      .catch((error) => {
+    })
+    .catch((error) => {
         console.error("Error fetching products:", error);
-      })
-      .finally(() => setLoading(false));
-  }, [token]);
+    })
+    .finally(() => setLoading(false));
+}, [token]);
+
+
+
+
+
   
   
   
