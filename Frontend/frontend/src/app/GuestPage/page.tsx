@@ -26,7 +26,7 @@ const TopOffersCard = ({ product, isInWishlist, isInFavItems, token, toggleWishl
     <div className="product-card">
       <div className="product-image-container">
         <img className='product-image' src={product.TopOffersImage} alt={product.TopOffersName} />
-        <Link href={`/Product?id=${product._id}&token=${token}`} className="view-product-button">
+        <Link href={`/GuestProduct?id=${product.productid}`} className="view-product-button">
           View Product
         </Link>
         <div className="Actionns">
@@ -44,9 +44,7 @@ const TopOffersCard = ({ product, isInWishlist, isInFavItems, token, toggleWishl
           <p className="category">{product.TopOffersPeriod}</p>
         </div>
         <div className="buttons-container">
-          <button className="add-to-cart-button" onClick={handleAddToCart}>Add to Cart</button>
-          <button className="rent-button" onClick={handleRent}>Rent</button>
-          <button className="rent-button" onClick={handlecustomize}>Customize</button>
+
 
         </div>
       </div>
@@ -67,8 +65,7 @@ const ProductCard = ({ product, isInWishlist, token, toggleWishlist, handleCart 
     window.location.href = `/GuestCustomization?id=${product._id}`;
   }
 
-  const stars = ["★★★★★", "★★★★", "★★★", "★★★★★", "★★★", "★★", "★", "★★★★★", "★★★★"];
-  const numreview = [12, 98, 34, 33, 56, 75, 43, 26, 78, 66, 54, 78, 67, 254, 109];
+
 
   return (
     <div className="product-card">

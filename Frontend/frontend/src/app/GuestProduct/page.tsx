@@ -153,8 +153,7 @@ const fetchcategoryData = async () => {
                               <div className="ProductHeader">
                 
                 <h1 className="ProductTitle">{(product as any).ProductName}</h1>
-                <button className="copybut" onClick={handleCopyUrl}><FontAwesomeIcon icon={faShare} className="profile-icon" />
-</button>
+
 </div>
                 <div className="ProductContainer">
                     <img alt={(product as any).ProductName} src={(product as any).ProductImage} className="ProductImage"/>
@@ -173,6 +172,8 @@ const fetchcategoryData = async () => {
         ) : (
           <p>No product found</p>
         )}
+                        <button className="copybut" onClick={handleCopyUrl}><FontAwesomeIcon icon={faShare} className="profile-icon" />
+</button>
         <div className="ProductReviews">
   {product && (product as any).ProductsReview && (product as any).ProductsReview.length > 0 ? ( 
     <>

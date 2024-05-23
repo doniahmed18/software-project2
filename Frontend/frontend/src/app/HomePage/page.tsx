@@ -15,21 +15,21 @@ import { faHeart as farHeart, faHeart as fasHeart } from "@fortawesome/free-regu
 const TopOffersCard = ({ product, isInWishlist ,isInFavItems,token,CArtDAta, toggleWishlist ,toggleFavItems}: { product: any, isInWishlist: boolean,isInFavItems:boolean, token : string ,CArtDAta: any, toggleWishlist: () => void ,toggleFavItems :() => void}) => {
   
 
-  const handlecart = async () => {
+  const handlecartt = async () => {
     try {
-      if (CArtDAta.some((item: any) => item.id === product._id)) {
+      if (CArtDAta.some((item: any) => item.id === product.productid)) {
         console.log("Product is already in the cart");
         alert("Product is already in the cart")
         return;
       }
-      console.log("product id: ", product._id);
+      console.log("product id: ", product.productid);
       const response = await fetch('http://localhost:4000/cart/editCart', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `${token}`
         },
-        body: JSON.stringify({ products: [`${product._id}`, 1] }), 
+        body: JSON.stringify({ products: [`${product.productid}`, 1] }), 
       });
   
       // Handle response
@@ -73,31 +73,20 @@ const TopOffersCard = ({ product, isInWishlist ,isInFavItems,token,CArtDAta, tog
     }
   };
   const handleRent = async () => {
-    window.location.href = `/Rent?id=${product._id}&token=${token}`;
+    window.location.href = `/Rent?id=${product.productid}&token=${token}`;
   }
   const handlecustomize = async () => {
-    window.location.href = `/Customize?id=${product._id}&token=${token}`;
+    window.location.href = `/Customize?id=${product.productid}&token=${token}`;
   }
   return (
     <div className="product-card">
       <div className="product-image-container">
         <img className='product-image' src={product.TopOffersImage} alt={product.TopOffersName} />
-        <Link href={`/Product?id=${product._id}&token=${token}`} className="view-product-button">
+        <Link href={`/Product?id=${product.productid}&token=${token}`} className="view-product-button">
           View Product
         </Link>
         <div className="Actionns">
-        <button
-  className={`add-to-favitems-button ${isInFavItems ? "selected" : ""}`}
-  onClick={toggleFavItems}
->
-<FontAwesomeIcon icon={isInFavItems ? faHeart : fasHeart } style={{ color: "white" }} />
-</button>
-        <button
-          className={`add-to-wishlist-button ${isInWishlist ? "selected" : ""}`}
-          onClick={toggleWishlist}
-        >
-          {isInWishlist ? "★" : "☆"}
-        </button>
+ 
         </div>
       </div>
       <div className="product-details">
@@ -109,9 +98,7 @@ const TopOffersCard = ({ product, isInWishlist ,isInFavItems,token,CArtDAta, tog
         <p className="category">{product.TopOffersPeriod}</p>{""}
         </div>
         <div className="buttons-container">
-          <button className="add-to-cart-button" onClick={handlecart}>Add to Cart</button>
-          <button className="rent-button" onClick={handleRent}>Rent</button>
-          <button className="rent-button" onClick={handlecustomize}>Customize</button>
+         
 
         </div>
       </div>
